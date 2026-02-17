@@ -25,14 +25,21 @@ export default function About() {
             
             <p className="mb-6">
               With a career spanning over a decade in higher education, she has established herself as a transformational leader. 
-              She served as the <strong className="text-primary font-semibold">Principal of Mount Mary College of Education</strong> in Somanya, Ghana, 
-              for eight years (2017–2025), where she championed numerous educational reforms and infrastructure developments.
+              As the <strong className="text-primary font-semibold">Principal of Mount Mary College of Education</strong> in Somanya (2017–2025), 
+              she oversaw a significant period of growth, managing a community of over 1,400 students and 140 staff members. Under her leadership, 
+              the college achieved a 60% female enrollment rate, reflecting her commitment to gender balance in teacher education.
+            </p>
+
+            <p className="mb-6">
+              She successfully spearheaded the <strong className="text-primary font-semibold">Support Teaching in Schools (STS)</strong> program, 
+              partnering with 124 basic schools to provide practical internship opportunities for student teachers. Her tenure was marked by 
+              the celebration of the college's 75th Anniversary in 2025, an event that highlighted her visionary approach to institutional excellence.
             </p>
             
             <p>
-              Prior to her role as Principal, she was a Senior Lecturer at the University of Education, Winneba, where she also held leadership positions 
-              including Head of the Department of French Education. She is a renowned speaker at international conferences, focusing on Teacher Education 
-              and the pedagogy of French as a foreign language.
+              Dr. Agbeh is also a vocal advocate for educational infrastructure, frequently engaging with national policy makers to address 
+              resource needs and teacher welfare. Her academic expertise in French Linguistics and Didactics, combined with her 
+              leadership experience, makes her a unique voice in the landscape of Ghanaian Teacher Education.
             </p>
           </div>
         </motion.div>

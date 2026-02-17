@@ -14,7 +14,7 @@ export default function Experience() {
       role: "Principal",
       org: "Mount Mary College of Education, Somanya",
       period: "2017 - 2025",
-      description: "Led the college for an 8-year tenure, driving academic excellence and infrastructural growth."
+      description: "Led an 8-year tenure driving academic excellence for 1,400+ students. Achieved 60% female enrollment and managed 140+ staff. Launched the STS program across 124 schools."
     },
     {
       role: "Senior Lecturer & HOD (French Education)",

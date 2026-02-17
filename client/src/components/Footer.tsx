@@ -17,12 +17,16 @@ export default function Footer() {
             
             <div className="space-y-4">
               <div className="flex items-center gap-4">
-                <MapPin className="text-secondary" />
+                <MapPin className="text-secondary w-5 h-5 flex-shrink-0" />
                 <span>National Teaching Council, Accra, Ghana</span>
               </div>
               <div className="flex items-center gap-4">
-                <Mail className="text-secondary" />
+                <Mail className="text-secondary w-5 h-5 flex-shrink-0" />
                 <span>info@ntc.gov.gh</span>
+              </div>
+              <div className="flex items-center gap-4">
+                <Phone className="text-secondary w-5 h-5 flex-shrink-0" />
+                <span>+233 (0) 30 273 6555</span>
               </div>
             </div>
           </div>
