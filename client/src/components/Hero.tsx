@@ -64,7 +64,7 @@ export default function Hero() {
           <div className="relative w-full max-w-md aspect-[3/4] rounded-2xl overflow-hidden shadow-2xl border-8 border-white/50">
              {/* Placeholder for professional image */}
             <img 
-              src="/images/profile-placeholder.png" 
+              src="/images/dr-cecilia-agbeh.jpg" 
               alt="Dr. Cecilia Agbeh"
               className="w-full h-full object-cover"
             />
