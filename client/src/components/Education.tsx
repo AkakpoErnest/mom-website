@@ -42,48 +42,69 @@ export default function Education() {
           
           {/* Degrees Column */}
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
+            initial={{ opacity: 0, x: -60 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
+            transition={{ type: "spring", stiffness: 90, damping: 16 }}
           >
             <div className="flex items-center gap-4 mb-8">
-              <div className="p-3 bg-white/10 rounded-lg">
+              <motion.div whileHover={{ rotate: -10, scale: 1.1 }} className="p-3 bg-white/10 rounded-lg">
                 <GraduationCap className="w-8 h-8 text-secondary" />
-              </div>
+              </motion.div>
               <h2 className="text-3xl font-serif font-bold text-white">Academic Degrees</h2>
             </div>
 
             <div className="space-y-8 border-l border-white/20 pl-8 ml-4">
               {education.map((edu, idx) => (
-                <div key={idx} className="relative">
-                  <div className="absolute -left-[41px] top-1 w-5 h-5 bg-secondary rounded-full border-4 border-primary"></div>
+                <motion.div
+                  key={idx}
+                  className="relative"
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: idx * 0.1 }}
+                  whileHover={{ x: 6 }}
+                >
+                  <motion.div
+                    whileHover={{ scale: 1.4 }}
+                    className="absolute -left-[41px] top-1 w-5 h-5 bg-secondary rounded-full border-4 border-primary"
+                  ></motion.div>
                   <h3 className="text-xl font-bold text-white">{edu.degree}</h3>
                   <p className="text-white/80 mt-1">{edu.school}</p>
-                </div>
+                </motion.div>
               ))}
             </div>
           </motion.div>
 
           {/* Certifications Column */}
           <motion.div
-            initial={{ opacity: 0, x: 30 }}
+            initial={{ opacity: 0, x: 60 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
+            transition={{ type: "spring", stiffness: 90, damping: 16 }}
           >
             <div className="flex items-center gap-4 mb-8">
-              <div className="p-3 bg-white/10 rounded-lg">
+              <motion.div whileHover={{ rotate: 10, scale: 1.1 }} className="p-3 bg-white/10 rounded-lg">
                 <Award className="w-8 h-8 text-secondary" />
-              </div>
+              </motion.div>
               <h2 className="text-3xl font-serif font-bold text-white">Certifications</h2>
             </div>
 
             <div className="bg-white/5 rounded-2xl p-8 backdrop-blur-sm border border-white/10">
               <ul className="space-y-6">
                 {certifications.map((cert, idx) => (
-                  <li key={idx} className="flex gap-4">
+                  <motion.li
+                    key={idx}
+                    className="flex gap-4"
+                    initial={{ opacity: 0, y: 12 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: idx * 0.1 }}
+                    whileHover={{ x: 4 }}
+                  >
                     <div className="w-2 h-2 mt-2.5 bg-secondary rounded-full flex-shrink-0" />
                     <span className="text-lg text-white/90 leading-relaxed">{cert}</span>
-                  </li>
+                  </motion.li>
                 ))}
               </ul>
             </div>

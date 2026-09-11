@@ -36,16 +36,20 @@ export default function Experience() {
           {experiences.map((exp, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, y: 40, scale: 0.9 }}
+              whileInView={{ opacity: 1, y: 0, scale: 1 }}
               viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
+              transition={{ delay: index * 0.15, type: "spring", stiffness: 200, damping: 18 }}
+              whileHover={{ y: -10, scale: 1.03 }}
             >
-              <Card className="h-full border-none shadow-lg hover:shadow-xl transition-shadow duration-300">
+              <Card className="h-full border-none shadow-lg hover:shadow-2xl transition-shadow duration-300">
                 <CardContent className="p-8">
-                  <div className="w-12 h-12 bg-secondary/10 rounded-full flex items-center justify-center mb-6 text-primary">
+                  <motion.div
+                    whileHover={{ rotate: 12, scale: 1.1 }}
+                    className="w-12 h-12 bg-secondary/10 rounded-full flex items-center justify-center mb-6 text-primary"
+                  >
                     <Briefcase className="w-6 h-6" />
-                  </div>
+                  </motion.div>
                   <h3 className="text-xl font-bold text-primary mb-2">{exp.role}</h3>
                   <p className="text-secondary-foreground font-medium mb-4">{exp.org}</p>
                   
