@@ -99,33 +99,28 @@ export default function Hero() {
           initial={{ opacity: 0, scale: 0.8, rotate: -6 }}
           animate={{ opacity: 1, scale: 1, rotate: 0 }}
           transition={{ duration: 0.9, delay: 0.2, type: "spring", stiffness: 90, damping: 14 }}
-          className="relative lg:h-[600px] flex items-center justify-center"
+          className="relative flex items-center justify-center lg:min-h-[600px]"
         >
+          <div className="absolute inset-x-8 top-10 bottom-12 -z-10 rounded-[2rem] border border-primary/10 bg-gradient-to-br from-white via-primary/[0.04] to-secondary/15" />
+
           <motion.div
-            className="relative w-full max-w-md aspect-[3/4] rounded-2xl overflow-hidden shadow-2xl border-8 border-white/50"
-            animate={{ y: [0, -14, 0] }}
+            className="relative w-full max-w-[24rem] aspect-[1/1.08]"
+            animate={{ y: [0, -12, 0] }}
             transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
           >
-            {/* Placeholder for professional image */}
-            <img
-              src="/images/dr-cecilia-agbeh.jpg"
-              alt="Dr. Cecilia Agbeh"
-              className="w-full h-full object-cover"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-primary/60 to-transparent opacity-60"></div>
-          </motion.div>
+            <div className="absolute -inset-4 -z-10 rotate-3 rounded-[2rem] bg-primary shadow-[0_30px_80px_-36px_rgba(15,23,42,0.65)]" />
+            <div className="absolute -right-4 -top-4 z-10 h-24 w-24 rounded-tr-[2rem] border-r-4 border-t-4 border-secondary" />
+            <div className="absolute -bottom-4 -left-4 z-10 h-24 w-24 rounded-bl-[2rem] border-b-4 border-l-4 border-secondary" />
 
-          {/* Decorative elements */}
-          <motion.div
-            className="absolute -bottom-6 -right-6 w-24 h-24 bg-secondary rounded-full blur-xl opacity-50"
-            animate={{ scale: [1, 1.3, 1], opacity: [0.5, 0.8, 0.5] }}
-            transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-          />
-          <motion.div
-            className="absolute -top-6 -left-6 w-32 h-32 bg-primary rounded-full blur-xl opacity-20"
-            animate={{ scale: [1, 1.25, 1], opacity: [0.2, 0.4, 0.2] }}
-            transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
-          />
+            <div className="relative h-full overflow-hidden rounded-[1.75rem] border-[10px] border-white bg-white shadow-2xl">
+              <img
+                src="/images/dr-cecilia-agbeh.jpg"
+                alt="Dr. Cecilia Agbeh"
+                className="h-full w-full origin-bottom scale-[1.26] object-cover object-bottom"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-primary/35 via-transparent to-transparent" />
+            </div>
+          </motion.div>
         </motion.div>
       </div>
     </section>
