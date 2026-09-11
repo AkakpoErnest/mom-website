@@ -4,6 +4,7 @@ import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { motion, AnimatePresence } from "framer-motion";
+import BrandLogo from "@/components/BrandLogo";
 
 export default function Navigation() {
   const [location] = useLocation();
@@ -44,9 +45,10 @@ export default function Navigation() {
           <motion.a
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.97 }}
-            className="font-serif text-xl font-bold tracking-tight text-primary cursor-pointer"
+            className="group flex min-w-0 cursor-pointer items-center rounded-md outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+            aria-label="Back to home"
           >
-            Dr. Cecilia Agbeh
+            <BrandLogo />
           </motion.a>
         </Link>
 
