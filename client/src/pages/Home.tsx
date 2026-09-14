@@ -36,7 +36,7 @@ export default function Home() {
         </div>
         {menuOpen && <nav id="mobile-nav" className="mobile-nav" aria-label="Mobile navigation">{[...links, ["Let’s connect", "contact"]].map(([label, id]) => <a key={id} href={`#${id}`} onClick={() => setMenuOpen(false)}>{label}<ArrowUpRight size={18}/></a>)}</nav>}
       </header>
-      <main id="main">
+      <main id="main" tabIndex={-1}>
         <section className="hero-section page-width" aria-labelledby="hero-title">
           <div className="hero-copy">
             <p className="eyebrow"><span className="small-line"/> EDUCATOR. LEADER. ADVOCATE.</p>
