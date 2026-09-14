@@ -1,4 +1,5 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import { usePageReveals } from "@/hooks/use-page-reveals";
 import { ArrowUpRight, ArrowDown, ArrowRight, Menu, X, MapPin, Mail, Phone } from "lucide-react";
 
 const links = [["About", "about"], ["Experience", "experience"], ["Education", "education"]];
@@ -15,6 +16,8 @@ const degrees = [
 ];
 
 export default function Home() {
+  const pageRef = useRef<HTMLDivElement>(null);
+  usePageReveals(pageRef);
   const [menuOpen, setMenuOpen] = useState(false);
   useEffect(() => {
     const close = (event: KeyboardEvent) => { if (event.key === "Escape") setMenuOpen(false); };
@@ -22,7 +25,7 @@ export default function Home() {
     return () => window.removeEventListener("keydown", close);
   }, []);
   return (
-    <div className="editorial-site" id="top">
+    <div className="editorial-site" id="top" ref={pageRef}>
       <a className="skip-link" href="#main">Skip to content</a>
       <header className="site-header">
         <div className="page-width nav-inner">

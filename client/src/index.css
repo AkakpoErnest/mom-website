@@ -673,3 +673,54 @@
                                                                                                                                                                                                                                                                                                               .editorial-site *{
                                                                                                                                                                                                                                                                                                                 transition:none!important}
                                                                                                                                                                                                                                                                                                               }
+
+/* Motion follows the quiet pace of the editorial layout. */
+@keyframes editorial-reveal {
+  from { opacity: 0; transform: translateY(22px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes editorial-menu {
+  from { opacity: 0; transform: translateY(-8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .hero-copy > * {
+    animation: editorial-reveal 750ms cubic-bezier(.22, 1, .36, 1) both;
+  }
+  .hero-copy > :nth-child(2) { animation-delay: 80ms; }
+  .hero-copy > :nth-child(3) { animation-delay: 160ms; }
+  .hero-copy > :nth-child(4) { animation-delay: 240ms; }
+  .hero-copy > :nth-child(5) { animation-delay: 320ms; }
+  .portrait-column {
+    animation: editorial-reveal 1000ms cubic-bezier(.22, 1, .36, 1) 180ms both;
+  }
+  .discover-link {
+    animation: editorial-reveal 750ms ease 450ms both;
+  }
+  .scroll-reveal {
+    animation: editorial-reveal 800ms cubic-bezier(.22, 1, .36, 1) var(--reveal-delay, 0ms) both;
+  }
+  .scroll-reveal:focus-within {
+    animation: none;
+  }
+  .mobile-nav {
+    animation: editorial-menu 220ms ease-out both;
+  }
+  .solid-link, .text-link, .nav-contact {
+    transition: transform 220ms ease, background-color 220ms ease, color 220ms ease;
+  }
+  .solid-link svg, .text-link svg, .nav-contact svg, .contact-details a svg:last-child {
+    transition: transform 220ms ease;
+  }
+  .solid-link:active { transform: translateY(1px); }
+}
+
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .solid-link:hover { transform: translateY(-3px); }
+  .solid-link:hover svg, .nav-contact:hover svg, .contact-details a:hover svg:last-child {
+    transform: translate(2px, -2px);
+  }
+  .text-link:hover svg { transform: translateX(4px); }
+}
