@@ -724,3 +724,68 @@
   }
   .text-link:hover svg { transform: translateX(4px); }
 }
+
+/* Persistent hero animation, with a visible pause control. */
+.motion-toggle {
+  display: none;
+  margin-top: 14px;
+  padding: 4px 0;
+  border: 0;
+  background: transparent;
+  color: var(--ink);
+  font: inherit;
+  font-size: 11px;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  cursor: pointer;
+}
+
+@keyframes portrait-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+@keyframes portrait-orbit {
+  to { transform: rotate(360deg); }
+}
+@keyframes scroll-cue {
+  0%, 100% { transform: translateY(-3px); }
+  50% { transform: translateY(5px); }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .motion-toggle { display: inline-block; }
+  .portrait-frame {
+    animation: portrait-float 5s ease-in-out infinite;
+  }
+  .portrait-orbit {
+    position: absolute;
+    top: 40px;
+    right: 28px;
+    width: 86px;
+    height: 86px;
+    border: 1px solid rgba(255, 255, 255, .65);
+    border-radius: 50%;
+    pointer-events: none;
+    animation: portrait-orbit 9s linear infinite;
+  }
+  .portrait-orbit::before {
+    content: "";
+    position: absolute;
+    top: -5px;
+    left: calc(50% - 5px);
+    width: 10px;
+    height: 10px;
+    background: #d8b47c;
+    border-radius: 50%;
+    box-shadow: 0 0 15px rgba(216, 180, 124, .65);
+  }
+  .discover-link svg {
+    animation: scroll-cue 1.6s ease-in-out infinite;
+  }
+}
+
+.editorial-site[data-motion-paused="true"] .portrait-frame,
+.editorial-site[data-motion-paused="true"] .portrait-orbit,
+.editorial-site[data-motion-paused="true"] .discover-link svg {
+  animation-play-state: paused !important;
+}

@@ -19,13 +19,14 @@ export default function Home() {
   const pageRef = useRef<HTMLDivElement>(null);
   usePageReveals(pageRef);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [motionPaused, setMotionPaused] = useState(false);
   useEffect(() => {
     const close = (event: KeyboardEvent) => { if (event.key === "Escape") setMenuOpen(false); };
     window.addEventListener("keydown", close);
     return () => window.removeEventListener("keydown", close);
   }, []);
   return (
-    <div className="editorial-site" id="top" ref={pageRef}>
+    <div className="editorial-site" id="top" ref={pageRef} data-motion-paused={motionPaused}>
       <a className="skip-link" href="#main">Skip to content</a>
       <header className="site-header">
         <div className="page-width nav-inner">
@@ -45,8 +46,9 @@ export default function Home() {
             <div className="hero-actions"><a className="solid-link" href="#about">Explore my journey <ArrowUpRight size={18}/></a><a className="text-link" href="#contact">Get in touch <ArrowRight size={17}/></a></div>
           </div>
           <div className="portrait-column">
-            <div className="portrait-frame"><img src="/images/dr-cecilia-agbeh.jpg" alt="Portrait of Dr. Cecilia Esinam Eyaa Agbeh" fetchPriority="high"/><span className="portrait-index">A LIFE IN EDUCATION</span></div>
+            <div className="portrait-frame"><img src="/images/dr-cecilia-agbeh.jpg" alt="Portrait of Dr. Cecilia Esinam Eyaa Agbeh" fetchPriority="high"/><span className="portrait-orbit" aria-hidden="true"/><span className="portrait-index">A LIFE IN EDUCATION</span></div>
             <div className="portrait-caption"><span className="status-dot"/><div><strong>Deputy Registrar (Operations)</strong><span>National Teaching Council, Ghana</span></div><span className="caption-year">2025 — PRESENT</span></div>
+            <button className="motion-toggle" onClick={() => setMotionPaused(!motionPaused)} aria-pressed={motionPaused}>{motionPaused ? "Play animation" : "Pause animation"}</button>
           </div>
           <a href="#about" className="discover-link"><ArrowDown size={15}/> DISCOVER THE STORY</a>
         </section>
